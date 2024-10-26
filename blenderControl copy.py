@@ -31,7 +31,11 @@ def init():
 @app.route("/smoothie", methods=['POST']) 
 def main():
     triggerDispenser()
+    time.sleep(1)
+    #turnOnPlug()
+    #time.sleep(1)
     turnOnPump()
+    time.sleep(1)
     turnOnPlug()
     return Response(status=204)
 
@@ -55,6 +59,7 @@ def triggerDispenser():
     print("Setting servo to min\n")
     pca.servo[i].angle = MIN_ANG[i]
     time.sleep(3)
+    #pca.servo[i].angle=None #disable channel
     disabled = False
     return Response(status=204)
     
@@ -80,7 +85,7 @@ def turnOnPlug():
     disabled =True
     print("BLEND BLEND BLEND")
     subprocess.call(['curl', '-d', '"true"', '-X', 'POST', '192.168.0.13/switch/localbytes_plug_pm_d5f04e/turn_on'])
-    time.sleep(2)
+    time.sleep(10)
     subprocess.call(['curl', '-d', '"true"', '-X', 'POST', '192.168.0.13/switch/localbytes_plug_pm_d5f04e/turn_off'])
     disabled = False
     print("NO MORE BLEND")
@@ -92,6 +97,7 @@ def hello():
 
 if __name__ == '__main__':
     init()
+    main()
     app.run()
     # init()
     # main()
