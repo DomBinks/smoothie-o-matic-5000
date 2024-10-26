@@ -4,42 +4,52 @@ import { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-
-import { Header } from './common/header'
 import { Option } from './common/option'
-import { History } from './history/history'
+import { Button } from 'react-bootstrap';
 
 function App() {
   const [history, setHistory] = useState(new Array<string>);
-  let addHistory = (item: string) => () => setHistory([...history,item]);
+  let addHistory = (item: string) => () => setHistory([item, ...history]);
 
   return (
     <>
-      <Header />
-      <Container>
-        <Row>
-          <Col> 
-            <div>
-              <Option name='Test1' endpoint='/test1'
-                addHistory={addHistory('Test1')}/>
-              <Option name='Test2' endpoint='/test2'
-                addHistory={addHistory('Test2')}/>
-              <Option name='Test3' endpoint='/test3'
-                addHistory={addHistory('Test3')}/>
-            </div>
-          </Col>
-          <Col>
-            <History />
-            <div style={{height: '80vh', overflowY: 'auto'}}>
-              {history.map(item => {return (
-                <>
-                  <h2>{item}</h2>
-                </>
-              )})}
-            </div>
-          </Col>
-        </Row>
-      </Container>
+      <div className='page'>
+        <Container>
+          <Row className='header'>
+              <h1>Smoothie-o-matic 5000</h1>
+          </Row>
+          <Row>
+            <Col> 
+              <div className='outer'>
+                <Option name='Add fruit' endpoint='/add_fruit'
+                  addHistory={addHistory('Add fruit')}/>
+                <Option name='Add juice' endpoint='/add_juice'
+                  addHistory={addHistory('Add juice')}/>
+                <Option name='Blend' endpoint='/blend'
+                  addHistory={addHistory('Blend')}/>
+              </div>
+            </Col>
+            <Col>
+              <div className='outer'>
+                <div className='option'>
+                  <h1>History</h1>
+                  <Button variant="success" size="lg"
+                    onClick={() => setHistory([])}>
+                    CLEAR
+                  </Button>
+                </div>
+                <div className='history'>
+                  {history.map(item => {return (
+                    <>
+                      <h2>{item}</h2>
+                    </>
+                  )})}
+                </div>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </div>
     </>
   )
 }

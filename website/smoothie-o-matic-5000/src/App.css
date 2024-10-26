@@ -1,0 +1,35 @@
+.page {
+    background-color: aquamarine;
+    height: 100vh;
+}
+
+.outer {
+    margin: 32px;
+    /*border: 1px solid blue;*/
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.header {
+    color: white;
+    background-color: orange;
+    text-align: center;
+}
+
+.option {
+    /*border: 1px solid black;*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: white;
+    background-color: orange; 
+    text-align: center;
+}
+
+.history {
+    height: 75vh;
+    overflow-y: scroll;
+    color: white;
+    background-color: orange;
+}

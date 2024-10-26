@@ -4,11 +4,13 @@ export function Option({name, endpoint, addHistory}:
     {name: string, endpoint:string, addHistory: () => void}){
     return(
         <>
-            <h1>{name}</h1>
-            <Button variant="primary" size="lg"
-                onClick={() => {addHistory(); onClick(endpoint)}}>
-                ADD
-            </Button>{' '}
+            <div className='option'>
+                <h1>{name}</h1>
+                <Button variant="success" size="lg"
+                    onClick={() => {addHistory(); onClick(endpoint)}}>
+                    ADD
+                </Button>{' '}
+            </div>
         </>
     )
 }
