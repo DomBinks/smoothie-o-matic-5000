@@ -16,6 +16,8 @@ export function Option({name, endpoint, addHistory}:
 }
 
 function onClick(endpoint: string) {
-    fetch(endpoint, )
+   fetch("http://192.168.0.12:5000"+endpoint, {
+    method: 'POST',
+   })
     return
 }

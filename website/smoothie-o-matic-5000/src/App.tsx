@@ -27,6 +27,8 @@ function App() {
                   addHistory={addHistory('Add juice')}/>
                 <Option name='Blend' endpoint='/blend'
                   addHistory={addHistory('Blend')}/>
+                <Option name='Smoothie' endpoint='/smoothie'
+                  addHistory={addHistory('Smoothie')}/>
               </div>
             </Col>
             <Col>
