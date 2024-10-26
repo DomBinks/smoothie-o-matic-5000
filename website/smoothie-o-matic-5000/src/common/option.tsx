@@ -5,7 +5,8 @@ export function Option({name, endpoint, addHistory}:
     return(
         <>
             <h1>{name}</h1>
-            <Button variant="primary" size="lg" onClick={addHistory}>
+            <Button variant="primary" size="lg"
+                onClick={() => {addHistory(); onClick(endpoint)}}>
                 ADD
             </Button>{' '}
         </>
@@ -13,6 +14,6 @@ export function Option({name, endpoint, addHistory}:
 }
 
 function onClick(endpoint: string) {
-    //alert("Test: " + endpoint)
+    fetch(endpoint, )
     return
 }

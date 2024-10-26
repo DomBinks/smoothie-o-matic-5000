@@ -18,21 +18,25 @@ function App() {
       <Header />
       <Container>
         <Row>
-          <Col>
-            <Option name='Test1' endpoint='/test1'
-              addHistory={addHistory('Test1')}/>
-            <Option name='Test2' endpoint='/test2'
-              addHistory={addHistory('Test2')}/>
-            <Option name='Test3' endpoint='/test3'
-              addHistory={addHistory('Test3')}/>
+          <Col> 
+            <div>
+              <Option name='Test1' endpoint='/test1'
+                addHistory={addHistory('Test1')}/>
+              <Option name='Test2' endpoint='/test2'
+                addHistory={addHistory('Test2')}/>
+              <Option name='Test3' endpoint='/test3'
+                addHistory={addHistory('Test3')}/>
+            </div>
           </Col>
           <Col>
             <History />
-            {history.map(item => {return (
-              <>
-                <h2>{item}</h2>
-              </>
-            )})}
+            <div style={{height: '80vh', overflowY: 'auto'}}>
+              {history.map(item => {return (
+                <>
+                  <h2>{item}</h2>
+                </>
+              )})}
+            </div>
           </Col>
         </Row>
       </Container>
