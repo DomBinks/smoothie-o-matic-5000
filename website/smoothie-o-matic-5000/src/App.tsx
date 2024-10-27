@@ -43,7 +43,7 @@ function App() {
                 <div className='history'>
                   {history.map(item => {return (
                     <>
-                      <h2>{item}</h2>
+                      <h2 className={"history-item " + item}><span className='history-item-text'>{item}</span></h2>
                     </>
                   )})}
                 </div>

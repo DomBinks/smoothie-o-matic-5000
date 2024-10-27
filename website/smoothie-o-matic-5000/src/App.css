@@ -1,5 +1,5 @@
 .page {
-    background-color: aquamarine;
+    background-color: #ffdd88;
     min-height: 100vh;
 }
 
@@ -12,8 +12,9 @@
 
 .header {
     color: white;
-    background-color: orange;
+    background-color: #ff5500;
     text-align: center;
+    border-radius: 0px 0px 10px 10px;
 }
 
 .option {
@@ -23,11 +24,44 @@
     color: white;
     background-color: orange; 
     text-align: center;
+    border-radius: 10px 0px;
+    padding: 4px;
+}
+
+.option:nth-child(odd){
+    background-color: #ff5500;
+}
+
+.option:nth-child(even){
+    background-color:black;
 }
 
 .history {
     height: 75vh;
     overflow-y: scroll;
     color: white;
-    background-color: orange;
+}
+.history-item{
+    border-radius: 10px 0;
+    text-align: center;
+    padding: 3px;
+}
+.history-item:nth-child(even){
+    background-color: black;
+}
+.history-item:nth-child(odd){
+    background-color: #ff5500;
+}
+
+.Blend{
+    color:red;
+    background-color: white !important;
+}
+
+.Smoothie{
+    background-image: linear-gradient(to right, red, orange, yellow, lime, cyan, indigo);
+}
+
+.Smoothie .history-item-text{
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
 }
