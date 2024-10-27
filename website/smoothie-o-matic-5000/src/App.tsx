@@ -19,7 +19,7 @@ function App() {
               <h1>Smoothie-o-matic 5000</h1>
           </Row>
           <Row>
-            <Col> 
+            <Col xs={12} md={6}> 
               <div className='outer'>
                 <Option name='Add fruit' endpoint='/add_fruit'
                   addHistory={addHistory('Add fruit')}/>
@@ -31,7 +31,7 @@ function App() {
                   addHistory={addHistory('Smoothie')}/>
               </div>
             </Col>
-            <Col>
+            <Col xs={12} md={6}>
               <div className='outer'>
                 <div className='option'>
                   <h1>History</h1>

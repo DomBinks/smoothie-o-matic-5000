@@ -1,6 +1,6 @@
 .page {
     background-color: aquamarine;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .outer {
